@@ -60,11 +60,12 @@ function showSlides(n) {
   }
   for (i = 0; i < numbers.length; i++) {
     numbers[i].className = numbers[i].className.replace(" bold", " light");
-    // numbers[i].className = numbers[i].className.add("light");
   }
   slides[slideIndex-1].style.display = "flex";
     numbers[slideIndex-1].className += " bold";
     numbers[slideIndex-1].classList.remove ('light');
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+
 }
 
 
@@ -80,7 +81,31 @@ function showLogoSlides() {
     logoSlides[i].style.display = "none";
   }
   slideIndex2++;
-  if (slideIndex2 > logoSlides.length) {slideIndex2 = 1}
+  if (slideIndex2 > logoSlides.length-4) {slideIndex2 = 1}
   logoSlides[slideIndex2-1].style.display = "block";
+  logoSlides[slideIndex2].style.display = "block";
+  logoSlides[slideIndex2+1].style.display = "block";
+  logoSlides[slideIndex2+2].style.display = "block";
+  logoSlides[slideIndex2+3].style.display = "block";
+
+  setTimeout(showLogoSlides, 2000); // Change image every 2 seconds
+  // console.log(slideIndex2);
+}
+var playing = true;
+var pauseButton = document.querySelector('.pause');
+
+function pauseSlideshow(){
+	playing = false;
+	clearInterval;
+}
+
+function playSlideshow(){
+	playing = true;
   setTimeout(showLogoSlides, 2000); // Change image every 2 seconds
 }
+
+pauseButton.onclick = function(){
+	if(playing){ pauseSlideshow(); }
+	else{ playSlideshow(); }
+};
+
