@@ -1,0 +1,659 @@
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("../polices/Nunito_Sans/NunitoSans-Regular.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #f1f5f8;
+    font-family: "Nunito Sans";
+}
+
+/* CSS fonts */
+h2 {
+    font: 700 clamp(32px, 4vw, 38px) "Nunito Sans";
+    margin-left: 16px;
+    margin-bottom: 20px;
+}
+
+p {
+    font: 300 clamp(16px, 4vw, 18px) "Nunito Sans";
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
+
+.hidden {
+    display: none;
+}
+
+/* CSS global */
+section {
+    background-color: white;
+    margin-bottom: 50px;
+}
+
+.btn {
+    width: 100%;
+    /* double check*/
+    background-color: #CF3034;
+    color: white;
+    border-radius: 6px;
+    padding: 14px 100px;
+    font: 700 18px "Nunito Sans";
+    border: 2px solid #CF3034;
+}
+
+/* CSS colors  */
+.colorRed {
+    color: #CF3034;
+}
+
+.colorWhite {
+    color: white
+}
+
+.bgRed {
+    background-color: #CF3034;
+}
+
+.bgWhite {
+    background-color: white;
+}
+
+
+/* Header */
+
+.headerFirst {
+    padding: 16px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerFirst img {
+    width: 58px;
+    height: 58px;
+}
+
+
+
+.desktopNav {
+    display: none;
+}
+
+.mobileNav {
+    background-color: #f1f5f8;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0px;
+    display: none;
+}
+
+.mobileNav .nav_list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.fa-caret-down {
+    margin-left: 5px;
+}
+
+/* ---- Header burger menu ------ */
+.burger {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.burger-bar {
+    width: 40px;
+    height: 5px;
+    background: #CF3034;
+    border-radius: 5px;
+}
+
+.burger-bar--top, .burger-bar--bottom{
+    content: "";
+    position: absolute;
+}
+
+.burger-bar--top{
+    transform: translateY(-12px);
+}
+.burger-bar--bottom{
+    transform: translateY(12px);
+}
+
+/* ANIMATION BURGER */
+.burger.open .burger-bar--top {
+    background: transparent;
+}
+
+.burger.open .burger-bar--middle {
+    transform: rotate(45deg);
+}
+
+.burger.open .burger-bar--bottom {
+    transform: rotate(-45deg);
+}
+
+
+/* -------- Banner section ----------- */
+
+#banner {
+    padding: 31px 16px;
+}
+
+#banner>img {
+    display: none;
+}
+
+.banner_text img {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font: 700 clamp(24px, 4vw, 38px) "Nunito Sans";
+    margin-bottom: 7px;
+}
+
+#banner p {
+    font-size: 18px;
+    margin-bottom: 36px;
+}
+
+.banner_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+
+
+/* -------- Impact section ----------- */
+
+#impact {
+    background-color: #f1f5f8;
+    padding: 0px 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.impactBox {
+    padding: 31px 4px 0px 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.impactBox_number {
+    font: 700 clamp(38px, 4vw, 64px) "Nunito Sans";
+}
+
+.impactBox_text {
+    font-size: clamp(18px, 4vw, 24px);
+}
+
+.impactBox img {
+    align-self: flex-end;
+}
+
+.impactBox_red {
+    padding: 44px 0px 0px 19px;
+}
+
+.impactBox_red .impactBox_text {
+    font: 700 24px "Nunito Sans";
+}
+
+/* -------- Testimonies section ----------- */
+
+#testimonies {
+    padding: 16px 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+}
+
+.testimoniesText {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+    min-height: 500px;
+
+}
+
+.fa-quote-left {
+    font-size: 30px;
+}
+
+#testimonies .fa-solid {
+    font-size: x-large;
+}
+
+.testimoniesPhoto {
+    display: none;
+}
+
+
+.testimoniesNumber {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.testimoniesNumber>div {
+    max-width: 200px;
+    display: flex;
+    gap: 18px;
+}
+
+.testimoniesNumber p {
+    font-size: 24px;
+}
+
+.number.bold{
+    font-weight: 700;
+}
+.number.light{
+    font-weight: 400;
+}
+
+
+/* -------- Apprentis section ----------- */
+
+#apprentis {
+    padding: 15px 16px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#apprentis>div {
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#apprentis h3 {
+    font: 700 clamp(18px, 4vw, 24px) "Nunito Sans";
+}
+
+.btn_plus {
+    margin-top: 20px;
+    padding-left: 38px;
+    padding-right: 38px;
+}
+
+/* -------- Support section ----------- */
+#support {
+    background-color: white;
+    padding-top: 20px;
+}
+
+.logos {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+
+}
+
+.logos img {
+    width: 47px;
+    height: 47px;
+}
+
+.sliders {
+    /* background-color: #f1f5f8; */
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+
+.sliders_signs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button_arrow {
+    display: none;
+}
+
+.button_arrow-mobile {
+    width: 30px;
+    height: 30px;
+}
+
+/* -------- Footer section ----------- */
+
+footer {
+    padding: 42px 15px 53px;
+}
+
+
+footer h3 {
+    font: 700 clamp(24px, 4vw, 38px) "Nunito Sans";
+    margin-bottom: 6px;
+}
+
+.inform p {
+    font: 700 clamp(16px, 4vw, 18px) "Nunito Sans";
+    margin-bottom: 20px;
+}
+
+.email {
+    display: flex;
+    margin-bottom: 21px;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+    font: 400 16px "Nunito Sans";
+}
+
+input {
+    border: 1px solid white;
+    padding: 7px 80px 5px 21px;
+    /* border-color: white; */
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 52px;
+}
+
+.social_medias {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 44px;
+}
+
+.footer_logo {
+    display: flex;
+    justify-content: center;
+}
+
+.footer_section_one>img {
+    display: none;
+}
+
+/* ========================================================= */
+
+
+/* CSS pour format desktop  */
+@media (min-width: 1000px) {
+
+    section,
+    h2 {
+        margin-left: 122px;
+        margin-right: 122px;
+    }
+
+    /* CSS fonts */
+    h2 {
+        margin-left: 122px;
+        margin-bottom: 50px;
+    }
+
+    /* CSS global */
+    section {
+        margin-bottom: 100px;
+    }
+
+    .btn {
+        padding: 14px 38px;
+        width: auto;
+    }
+
+    /* ----------- Header section  ------------ */
+    .headerFirst {
+        padding: 0px 122px 80px 122px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .desktopNav {
+        display: block;
+    }
+
+    .mobileNav {
+        display: none;
+    }
+
+    .desktopNav .nav_list {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+
+    /* -------- Banner section ----------- */
+
+    #banner {
+        padding: 45px 0px 45px 56px;
+        display: flex;
+        gap: 40px;
+    }
+
+    #banner>* {
+        width: 50%;
+    }
+
+    #banner>img {
+        display: block;
+    }
+
+    .banner_text img {
+        margin-top: 15px;
+        margin-bottom: 34px;
+    }
+
+    h1 {
+        margin-bottom: 12px;
+    }
+
+    #banner p {
+        margin-bottom: 49px;
+    }
+
+    .banner_buttons {
+        flex-direction: row;
+        gap: 19px;
+    }
+
+    /* -------- Impact section ----------- */
+
+    #impact {
+        padding: 0px 189px 0px 189px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .impactBox {
+        padding: 31px 7px 0px 16px;
+    }
+
+    .impactBox_red {
+        padding: 70px 19px 0px;
+    }
+
+    /* -------- Testimonies section ----------- */
+
+    #testimonies {
+        padding: 38px 59px 18px;
+        min-height: 400px;
+    }
+
+    .testimony {
+        display: flex;
+        gap: 59px;
+    }
+
+    .testimoniesText {
+        gap: 13px;
+        min-height: 300px;
+    }
+
+
+    .testimoniesPhoto {
+        display: block;
+    }
+
+    .testimoniesNumber {
+        margin-top: max(10px);
+        margin-right: 20px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /* -------- Apprentis section ----------- */
+
+    #apprentis {
+        background: url(../Images/img-apprentis.png) 100% 100% no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        /* align-content: flex-start; */
+        padding: 0px 0px 70px 0px;
+    }
+
+    #apprentis img {
+        display: none;
+    }
+
+    #apprentis div {
+        background: white;
+        max-width: 45%;
+        padding: 40px 35px 33px 40px;
+    }
+
+    /* -------- Apprentis section ----------- */
+    .logos {
+        gap: 20px;
+    }
+
+    .logos img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .sliders_signs {
+        background-color: #f1f5f8;
+        /* justify-content: space-between; */
+        /* display: flex; */
+    }
+
+    .button_arrow-mobile {
+        display: none;
+    }
+
+    .button_arrow {
+        display: block;
+        height: 30px;
+        float: right;
+        /* margin-left: auto; */
+        /* justify-items: flex-end; */
+    }
+
+    /* -------- Footer section ----------- */
+
+    footer {
+        padding-top: 37px;
+        padding-bottom: 21px;
+    }
+
+    .footer_section_one {
+        display: flex;
+        justify-content: center;
+        gap: 150px;
+        margin-bottom: 50px;
+        align-content: center;
+    }
+
+    .footer_section_one>img {
+        display: block;
+        align-self: center;
+    }
+
+
+    .footer_logo {
+        display: none;
+    }
+
+    footer ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 52px;
+    }
+
+    footer ul li:after {
+        content: " |";
+        letter-spacing: 0.6em;
+    }
+
+    footer ul li:last-child:after {
+        content: "";
+    }
+
+    .footer_section_two {
+        display: flex;
+        flex-direction: column-reverse;
+        align-content: center;
+
+    }
+
+    .social_medias {
+        gap: 30px;
+    }
+
+    .social_medias img {
+        width: 55px;
+    }
+
+
+
+}
