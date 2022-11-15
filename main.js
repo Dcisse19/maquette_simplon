@@ -70,25 +70,17 @@ function showSlides(n) {
 
 // --------- Caroussel des logos ------------
 
-$(document).ready(function(){
-    $('.logos').slick({
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        arrows: false,
-        dots: false,
-        pauseOnHover: false,
-        responsive: [{
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 4
-            }
-        }, {
-            breakpoint: 520,
-            settings: {
-                slidesToShow: 3
-            }
-        }]
-    });
-});
+let slideIndex2 = 0;
+showLogoSlides();
+
+function showLogoSlides() {
+  let i;
+  let logoSlides = document.getElementsByClassName("logo_slide");
+  for (i = 0; i < logoSlides.length; i++) {
+    logoSlides[i].style.display = "none";
+  }
+  slideIndex2++;
+  if (slideIndex2 > logoSlides.length) {slideIndex2 = 1}
+  logoSlides[slideIndex2-1].style.display = "block";
+  setTimeout(showLogoSlides, 2000); // Change image every 2 seconds
+}
